@@ -16,7 +16,7 @@ position = Vector2(479, 172)
 scale = Vector2(4, 4)
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1696932186]
-position = Vector2(117, 301)
+position = Vector2(460, 72)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("3_twlvc")
 
