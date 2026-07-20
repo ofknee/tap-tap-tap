@@ -1,5 +1,5 @@
 extends TileMapLayer
-var speed : float = 1
+var speed : float = 0.75
 var spawn_position = Vector2i(1,1)
 
 # Called when the node enters the scene tree for the first time.
