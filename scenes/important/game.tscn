@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://wkur7bfdvfoo"]
 
+[ext_resource type="PackedScene" uid="uid://j28wlyk5oqu2" path="res://scenes/iso/jump_strip.tscn" id="1_uup8x"]
+
 [node name="game" type="Node2D" unique_id=1528345599]
+
+[node name="JumpStrip" parent="." unique_id=883491700 instance=ExtResource("1_uup8x")]
+position = Vector2(273, 389)
+scale = Vector2(2, 2)
