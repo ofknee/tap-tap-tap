@@ -14,3 +14,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	global_position -= Vector2(speed*2, -speed)
+	for tile in get_used_cells():
+		var world_pos = to_global(map_to_local(tile))
+		if world_pos.x < 62:
+			erase_cell(tile)
+
+#no red red
+#delete block at end, spawn
