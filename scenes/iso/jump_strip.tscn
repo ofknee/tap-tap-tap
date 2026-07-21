@@ -1,10 +1,9 @@
-[gd_scene format=4 uid="uid://j28wlyk5oqu2"]
+[gd_scene format=3 uid="uid://j28wlyk5oqu2"]
 
 [ext_resource type="TileSet" uid="uid://byx3g6f56lrna" path="res://resources/iso_tile_set.tres" id="1_rggc0"]
 [ext_resource type="Script" uid="uid://d0uwl0gnc7i1y" path="res://scenes/iso/jump_strip.gd" id="2_rggc0"]
 
 [node name="JumpStrip" type="TileMapLayer" unique_id=883491700]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAAAP//AQABAAAAAAABAP//AQABAAAAAAACAP//AQABAAAAAAADAP//AQABAAAAAAAEAP//AQAFAAAAAAAFAP//AQABAAAAAAAGAP//AQABAAAAAAAHAP//AQAFAAAAAAAIAP//AQABAAAAAAAJAP//AQABAAAAAAAKAP//AQABAAAAAAALAP//AQABAAAAAAAMAP//AQAFAAAAAAANAP//AQABAAAAAAAOAP//AQABAAAAAAA=")
 tile_set = ExtResource("1_rggc0")
 script = ExtResource("2_rggc0")
