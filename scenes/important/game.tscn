@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cy63vrwb4d4ns" path="res://killzone.tscn" id="4_43k1h"]
 [ext_resource type="Texture2D" uid="uid://cj3q5gweuqo2v" path="res://assets/iso/shadow.png" id="4_twlvc"]
 
+[sub_resource type="GDScript" id="GDScript_twlvc"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_weljr"]
 radius = 7.0
-
-[sub_resource type="GDScript" id="GDScript_twlvc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l57lt"]
 
@@ -23,6 +23,12 @@ scale = Vector2(4, 4)
 position = Vector2(227, 72)
 script = ExtResource("3_twlvc")
 
+[node name="Shadow" type="Sprite2D" parent="player" unique_id=921988978]
+self_modulate = Color(1, 1, 1, 0.3882353)
+scale = Vector2(2, 2)
+texture = ExtResource("4_twlvc")
+script = SubResource("GDScript_twlvc")
+
 [node name="Sprite2D" type="Sprite2D" parent="player" unique_id=2090611005]
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_43k1h")
@@ -33,12 +39,6 @@ scale = Vector2(2.0410643, 2.0410643)
 shape = SubResource("CircleShape2D_weljr")
 
 [node name="RayCast2D" type="RayCast2D" parent="player" unique_id=690951229]
-
-[node name="Shadow" type="Sprite2D" parent="player" unique_id=921988978]
-self_modulate = Color(1, 1, 1, 0.3882353)
-scale = Vector2(2, 2)
-texture = ExtResource("4_twlvc")
-script = SubResource("GDScript_twlvc")
 
 [node name="killzone" parent="." unique_id=1663306613 instance=ExtResource("4_43k1h")]
 position = Vector2(0, 870)
