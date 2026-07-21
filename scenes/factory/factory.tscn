@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://26cmtm6k7xp0"]
+
+[ext_resource type="PackedScene" uid="uid://bcwm075vwwb76" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/conveyor-long-stripe-sides.glb" id="1_hdo8d"]
+[ext_resource type="PackedScene" uid="uid://c0cboynhjfwgy" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/structure-wall.glb" id="2_37mx5"]
+[ext_resource type="PackedScene" uid="uid://6bsq1s0pgmp5" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/piston-square.glb" id="3_3gw73"]
+[ext_resource type="PackedScene" uid="uid://c0d2h3nlqr03j" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/hopper-high-square.glb" id="4_kr1kb"]
+[ext_resource type="PackedScene" uid="uid://cvytfcd7y3m12" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/arrow-basic.glb" id="5_7wd4f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43hlm"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8o121"]
+material = SubResource("StandardMaterial3D_43hlm")
+size = Vector2(40, 20)
+
+[node name="Factory" type="Node3D" unique_id=218373315]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1257165625]
+transform = Transform3D(0.9659259, -0.13136059, 0.2230059, 0, 0.86162907, 0.50753856, -0.25881892, -0.49024463, 0.8322698, 6.3197575, 7.1459007, 3.9377632)
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1381546789]
+mesh = SubResource("PlaneMesh_8o121")
+
+[node name="conveyor-long-stripe-sides2" parent="." unique_id=293472886 instance=ExtResource("1_hdo8d")]
+transform = Transform3D(40, 0, 0, 0, 1.5063945, 0, 0, 0, 2.903504, 0, 0, -1.3745146)
+
+[node name="structure-wall2" parent="." unique_id=198059091 instance=ExtResource("2_37mx5")]
+transform = Transform3D(-40, 0, -1.2763725e-07, 0, 3.36, 0, 3.4969112e-06, 0, -1.46, 0, -0.1, -5.16)
+
+[node name="piston-square2" parent="." unique_id=1763198130 instance=ExtResource("3_3gw73")]
+transform = Transform3D(1.4858476, 0, 0, 0, -2.1843334e-07, 1.2181902, 0, -4.9971724, -5.3248783e-08, 0, 6.8170114, -1.0524473)
+
+[node name="hopper-high-square2" parent="." unique_id=342009806 instance=ExtResource("4_kr1kb")]
+transform = Transform3D(0.9826279, 0, 0, 0, -0.9826279, 8.590406e-08, 0, -8.590406e-08, -0.9826279, 0, 6.508, -1.3185074)
+
+[node name="arrow-basic2" parent="." unique_id=389735274 instance=ExtResource("5_7wd4f")]
+transform = Transform3D(1.2419455e-15, 2.8412401e-08, 0.65, 0.65, -2.8412401e-08, 0, 2.8412401e-08, 0.65, -2.8412401e-08, 0, 6.784936, -1.1140388)
