@@ -1,11 +1,13 @@
 extends TileMapLayer
-var speed : float = Global.wait
+var speed : float = Global.speed
 var spawnpoint = Vector2i(5,-1)
 var tile = {"id" : 1, "atlas_coords" : Vector2i(1,0), }
 var last_tile
 var generation = Global.generation
 
 func _ready() -> void:
+	SignalBus.spawn_new.connect(spawn_tile)
+	
 	for i in range(10):
 		if generation[-1] == 0:
 				generation.append(randi_range(0,1))
@@ -14,7 +16,7 @@ func _ready() -> void:
 		
 	print(generation)
 	for i in generation:
-		spawn_new(i)
+		SignalBus.spawn_new.emit(i)
 		
 
 	## collision shapes around map
@@ -37,10 +39,10 @@ func _process(delta: float) -> void:
 				generation.append(randi_range(0,1))
 			else:
 				generation.append(0) 
-				spawn_new(generation[-1])
-			spawn_new(generation[-1])
+				SignalBus.spawn_new.emit(generation[-1])
+			SignalBus.spawn_new.emit(generation[-1])
 
-func spawn_new(type:int) -> void:
+func spawn_tile(type:int) -> void:
 	if type == 0:
 		set_cell(spawnpoint, tile["id"], tile["atlas_coords"])
 	spawnpoint += Vector2i(1,0)
