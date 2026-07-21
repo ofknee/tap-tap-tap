@@ -15,7 +15,7 @@ size = Vector2(40, 20)
 [node name="Factory" type="Node3D" unique_id=218373315]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1257165625]
-transform = Transform3D(0.9659259, -0.13136059, 0.2230059, 0, 0.86162907, 0.50753856, -0.25881892, -0.49024463, 0.8322698, 6.3197575, 7.1459007, 3.9377632)
+transform = Transform3D(0.9659259, -0.13116588, 0.22312044, 0, 0.8620717, 0.50678635, -0.2588189, -0.48951805, 0.83269733, 6.498806, 7.427326, 4.605995)
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1381546789]
 mesh = SubResource("PlaneMesh_8o121")
