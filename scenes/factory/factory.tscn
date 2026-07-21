@@ -32,7 +32,7 @@ sky = SubResource("Sky_37mx5")
 [node name="Factory" type="Node3D" unique_id=218373315]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1257165625]
-transform = Transform3D(0.92050475, 0.19509621, -0.33853877, 0, 0.86642325, 0.49931034, 0.3907314, -0.4596175, 0.79754674, -1.1046028, 7.427082, 5.281479)
+transform = Transform3D(0.9304175, 0.1857621, -0.3159364, 0, 0.86203295, 0.5068522, 0.3665015, -0.47158414, 0.80205053, -1.3748746, 7.827964, 5.9920607)
 
 [node name="Structure" type="Node3D" parent="." unique_id=1110542878]
 
@@ -45,13 +45,12 @@ transform = Transform3D(40, 0, 0, 0, 1.5063945, 0, 0, 0, 2.903504, 0, 0, -1.3745
 [node name="Spawner" parent="Structure" unique_id=1282206509 instance=ExtResource("3_37mx5")]
 transform = Transform3D(6.02, 0, 0, 0, 3.87, 0, 0, 0, 3.14, 10.287131, 0, -1.372)
 script = ExtResource("4_7wd4f")
-large_box = Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":false,"visibility_parent":NodePath(""),"script":Resource("res://scenes/factory/spawnable.gd"))
-
-small_box = Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":false,"visibility_parent":NodePath(""),"script":Resource("res://scenes/factory/spawnable.gd"))
-
+large_box = ExtResource("9_7v5iq")
+small_box = ExtResource("10_ggcq3")
+yellow_button = ExtResource("8_vv6eg")
 
 [node name="Spawnpoint" type="Marker3D" parent="Structure/Spawner" unique_id=1631144658]
-transform = Transform3D(0.9999992, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0.6075865, 0.1671479, 0.006109506)
+transform = Transform3D(0.99999905, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -1.0728557, 0.30929935, 0.006109506)
 
 [node name="Floor" type="MeshInstance3D" parent="Structure" unique_id=1381546789]
 mesh = SubResource("PlaneMesh_8o121")
@@ -77,9 +76,9 @@ light_color = Color(0.7144246, 0.58231264, 0.99841934, 1)
 shadow_enabled = true
 
 [node name="Spawnables" type="Node3D" parent="." unique_id=1442845570]
+visible = false
 
 [node name="YellowButton" parent="Spawnables" unique_id=799952080 instance=ExtResource("8_vv6eg")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.57975984, -1.4019692)
 
 [node name="LargeBox" parent="Spawnables" unique_id=2039763689 instance=ExtResource("9_7v5iq")]
 

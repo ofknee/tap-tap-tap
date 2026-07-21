@@ -12,18 +12,21 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spawn_new(type : int):
+
 	var inst : Node3D
 	match type:
 		0:
+			print("i got called :(")
 			inst = large_box.instantiate()
 		1:
 			inst = yellow_button.instantiate()
 	add_child(inst)
-	inst.position = spawnpoint.position
+	inst.global_position = spawnpoint.global_position
 
 
 func _input(event : InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
+		print("space pressed")
 		spawn_new(0)
 	if Input.is_action_just_pressed("LEFT"):
 		spawn_new(1)
