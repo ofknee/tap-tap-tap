@@ -15,6 +15,10 @@
 position = Vector2(479, 172)
 scale = Vector2(4, 4)
 
+[node name="Timer" type="Timer" parent="." unique_id=772469732]
+wait_time = 0.1
+autostart = true
+
 [node name="player" type="CharacterBody2D" parent="." unique_id=1696932186]
 position = Vector2(460, 72)
 scale = Vector2(1.5, 1.5)
@@ -32,3 +36,5 @@ position = Vector2(0, 870)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=59841531]
 shape = SubResource("WorldBoundaryShape2D_l57lt")
+
+[connection signal="timeout" from="Timer" to="player" method="_on_timer_timeout"]

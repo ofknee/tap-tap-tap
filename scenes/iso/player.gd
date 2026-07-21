@@ -1,9 +1,16 @@
 extends CharacterBody2D
 
 
+<<<<<<< Updated upstream
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+=======
+const SPEED = 180.0
+const JUMP_VELOCITY = -280.0
+@onready var ray = $RayCast2D
+@onready var shadow = $Shadow	
+>>>>>>> Stashed changes
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,3 +30,7 @@ func _physics_process(delta: float) -> void:
 	#	velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_timer_timeout() -> void:
+	Global.add_point()
