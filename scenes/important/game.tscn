@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://wkur7bfdvfoo"]
 
 [ext_resource type="PackedScene" uid="uid://j28wlyk5oqu2" path="res://scenes/iso/jump_strip.tscn" id="1_uup8x"]
-[ext_resource type="Texture2D" path="res://assets/sphere.png" id="3_43k1h"]
 [ext_resource type="Script" uid="uid://bhgujarx8u4nd" path="res://scenes/iso/player.gd" id="3_twlvc"]
+[ext_resource type="Texture2D" uid="uid://b7ciyxbnwtvme" path="res://assets/iso/sphere.png" id="4_0peuu"]
 [ext_resource type="PackedScene" uid="uid://cy63vrwb4d4ns" path="res://killzone.tscn" id="4_43k1h"]
 [ext_resource type="Texture2D" uid="uid://cj3q5gweuqo2v" path="res://assets/iso/shadow.png" id="4_twlvc"]
 
@@ -64,7 +64,7 @@ script = SubResource("GDScript_twlvc")
 
 [node name="Sprite2D" type="Sprite2D" parent="player" unique_id=2090611005]
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_43k1h")
+texture = ExtResource("4_0peuu")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=257669551]
