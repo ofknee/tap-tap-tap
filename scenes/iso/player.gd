@@ -5,9 +5,13 @@ const SPEED = 180.0
 const JUMP_VELOCITY = -280.0
 @onready var ray = $RayCast2D
 @onready var shadow = $Shadow
-
+@onready var score_label = $"../Timer/HBoxContainer/score"
+@onready var hs_label = $"../Timer/HBoxContainer2/highScore"
 
 func _physics_process(delta: float) -> void:
+	
+	hs_label.text = " High Score: " + str(Global.high_score)
+
 	if ray.is_colliding():
 		shadow.show()
 			
@@ -33,3 +37,13 @@ func _physics_process(delta: float) -> void:
 	#	velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func add_point():
+	Global.score += 1
+	if Global.score > Global.high_score:
+			Global.high_score = Global.score
+			hs_label.text = " High Score: " + str(Global.high_score)
+	score_label.text = " Score: " + str(Global.score)
+
+func _on_timer_timeout() -> void:
+	add_point()
