@@ -1,9 +1,34 @@
 [gd_scene format=3 uid="uid://wkur7bfdvfoo"]
 
 [ext_resource type="PackedScene" uid="uid://j28wlyk5oqu2" path="res://scenes/iso/jump_strip.tscn" id="1_uup8x"]
+[ext_resource type="Texture2D" uid="uid://b7ciyxbnwtvme" path="res://assets/sphere.png" id="3_43k1h"]
+[ext_resource type="Script" uid="uid://bhgujarx8u4nd" path="res://scenes/iso/player.gd" id="3_twlvc"]
+[ext_resource type="PackedScene" uid="uid://cy63vrwb4d4ns" path="res://killzone.tscn" id="4_43k1h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_weljr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l57lt"]
 
 [node name="game" type="Node2D" unique_id=1528345599]
 
 [node name="JumpStrip" parent="." unique_id=883491700 instance=ExtResource("1_uup8x")]
-position = Vector2(273, 389)
-scale = Vector2(2, 2)
+position = Vector2(479, 172)
+scale = Vector2(4, 4)
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1696932186]
+position = Vector2(460, 72)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("3_twlvc")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=2090611005]
+texture = ExtResource("3_43k1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=257669551]
+scale = Vector2(2.0410643, 2.0410643)
+shape = SubResource("CircleShape2D_weljr")
+
+[node name="killzone" parent="." unique_id=1663306613 instance=ExtResource("4_43k1h")]
+position = Vector2(0, 870)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=59841531]
+shape = SubResource("WorldBoundaryShape2D_l57lt")
