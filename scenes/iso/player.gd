@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -430.0
+const JUMP_VELOCITY = -420.0
 @onready var ray = $RayCast2D
 @onready var shadow = $Shadow
 
