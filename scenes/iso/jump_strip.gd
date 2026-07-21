@@ -1,14 +1,20 @@
 extends TileMapLayer
 var speed : float = Global.wait
-var spawnpoint = Vector2i(15,-1)
+var spawnpoint = Vector2i(5,-1)
 var good_tile = {"type" : "good", "id" : 1, "atlas_coords" : Vector2i(1,0), }
 var bad_tile = {"type" : "bad", "id" : 1,"atlas_coords" : Vector2i(5,0),}
 var tiles : Array = [good_tile, bad_tile]
-var spawn_pick
 var last_tile
+var generation = Global.generation
 
 func _ready() -> void:
-	pass
+	for i in range(15):
+		if generation[-1] == 0:
+				generation.append(randi_range(0,1))
+		else:
+			generation.append(0) 
+		set_cell(spawnpoint, tiles[generation[i]]["id"], tiles[generation[i]]["atlas_coords"])
+		spawnpoint += Vector2i(1,0)
 	## collision shapes around map
 	#var filled_tiles := get_used_cells() 
 	#for tile: Vector2i in filled_tiles:
@@ -24,11 +30,15 @@ func _process(delta: float) -> void:
 		var world_pos = to_global(map_to_local(tile))
 		if world_pos.x < -32:
 			erase_cell(tile)
-			spawn_pick = tiles.pick_random()
-			spawn_new(spawn_pick)
+			# no back to back reds
+			if generation[-1] == 0:
+				generation.append(randi_range(0,1))
+			else:
+				generation.append(0) 
+			spawn_new(generation[-1])
 
-func spawn_new(tile : Dictionary) -> void:
-	set_cell(spawnpoint, tile["id"], tile["atlas_coords"])
+func spawn_new(tile : int) -> void:
+	set_cell(spawnpoint, tiles[tile]["id"], tiles[tile]["atlas_coords"])
 	spawnpoint += Vector2i(1,0)
 	print(spawnpoint)
 
