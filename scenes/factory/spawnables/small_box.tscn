@@ -44,7 +44,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yt4a2")
 
 [node name="SmallBox" type="Node3D" unique_id=1158103182]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
 visible = false
 script = ExtResource("1_5nfco")
 

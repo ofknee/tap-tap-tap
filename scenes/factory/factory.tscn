@@ -50,7 +50,7 @@ small_box = ExtResource("10_ggcq3")
 yellow_button = ExtResource("8_vv6eg")
 
 [node name="Spawnpoint" type="Marker3D" parent="Structure/Spawner" unique_id=1631144658]
-transform = Transform3D(0.99999905, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -1.0728557, 0.30929935, 0.006109506)
+transform = Transform3D(0.9999984, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 1.449, 0.14, 0.006)
 
 [node name="Floor" type="MeshInstance3D" parent="Structure" unique_id=1381546789]
 mesh = SubResource("PlaneMesh_8o121")
