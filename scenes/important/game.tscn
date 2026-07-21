@@ -1,47 +1,22 @@
 [gd_scene format=3 uid="uid://wkur7bfdvfoo"]
 
 [ext_resource type="PackedScene" uid="uid://j28wlyk5oqu2" path="res://scenes/iso/jump_strip.tscn" id="1_uup8x"]
+[ext_resource type="Shader" uid="uid://c4rf6mbkhl52g" path="res://resources/shadow.gdshader" id="2_0peuu"]
 [ext_resource type="Texture2D" uid="uid://b7ciyxbnwtvme" path="res://assets/sphere.png" id="3_43k1h"]
 [ext_resource type="Script" uid="uid://bhgujarx8u4nd" path="res://scenes/iso/player.gd" id="3_twlvc"]
 [ext_resource type="PackedScene" uid="uid://cy63vrwb4d4ns" path="res://killzone.tscn" id="4_43k1h"]
 [ext_resource type="Texture2D" uid="uid://cj3q5gweuqo2v" path="res://assets/iso/shadow.png" id="4_twlvc"]
 
-[sub_resource type="Shader" id="Shader_l0lx7"]
-code = "shader_type canvas_item;
-
-void vertex() {
-	// Called for every vertex the material is visible on.
-}
-
-void fragment() {
-	// Called for every pixel the material is visible on.
-}
-
-//void light() {
-//	// Called for every pixel for every light affecting the CanvasItem.
-//	// Uncomment to replace the default light processing function with this one.
-//}
-"
+[sub_resource type="CircleShape2D" id="CircleShape2D_weljr"]
+radius = 7.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x5jbj"]
-shader = SubResource("Shader_l0lx7")
+shader = ExtResource("2_0peuu")
+shader_parameter/shadow_color = Color(0, 0.2, 0.25, 0.45)
+shader_parameter/minimum_green = 0.55
+shader_parameter/minimum_blue = 0.65
 
 [sub_resource type="GDScript" id="GDScript_twlvc"]
-script/source = "extends Sprite2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
-"
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_weljr"]
-radius = 8.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l57lt"]
 
@@ -51,26 +26,27 @@ radius = 8.0
 position = Vector2(0, 554)
 scale = Vector2(4, 4)
 
-[node name="Shadow" type="Sprite2D" parent="." unique_id=921988978]
-self_modulate = Color(1, 1, 1, 0.46666667)
-material = SubResource("ShaderMaterial_x5jbj")
-position = Vector2(227, 440)
-scale = Vector2(3, 3)
-texture = ExtResource("4_twlvc")
-script = SubResource("GDScript_twlvc")
-
 [node name="player" type="CharacterBody2D" parent="." unique_id=1696932186]
 position = Vector2(227, 72)
-scale = Vector2(1.2, 1.2)
 script = ExtResource("3_twlvc")
 
 [node name="Sprite2D" type="Sprite2D" parent="player" unique_id=2090611005]
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_43k1h")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=257669551]
 scale = Vector2(2.0410643, 2.0410643)
 shape = SubResource("CircleShape2D_weljr")
+
+[node name="RayCast2D" type="RayCast2D" parent="player" unique_id=690951229]
+
+[node name="Shadow" type="Sprite2D" parent="player" unique_id=921988978]
+self_modulate = Color(1, 1, 1, 0.3882353)
+material = SubResource("ShaderMaterial_x5jbj")
+scale = Vector2(2, 2)
+texture = ExtResource("4_twlvc")
+script = SubResource("GDScript_twlvc")
 
 [node name="killzone" parent="." unique_id=1663306613 instance=ExtResource("4_43k1h")]
 position = Vector2(0, 870)

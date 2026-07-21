@@ -3,9 +3,19 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -430.0
+@onready var ray = $RayCast2D
+@onready var shadow = $Shadow
 
 
 func _physics_process(delta: float) -> void:
+	if ray.is_colliding():
+		shadow.show()
+			
+		var hit = ray.get_collision_point()
+		shadow.global_position = Vector2(global_position.x, hit.y + 6)
+		
+	else:
+		shadow.hide()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
