@@ -1,13 +1,10 @@
 extends Node3D
 
-@export var large_box : Node3D
-@export var small_box : Node3D
-@export var button : Node3D
-@onready var spawnpoint =  $Spawnpoint
+var speed = Global.speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	position.x -= speed
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

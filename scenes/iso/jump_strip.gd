@@ -1,5 +1,5 @@
 extends TileMapLayer
-var speed : float = Global.wait
+var speed : float = Global.speed
 var spawnpoint = Vector2i(5,-1)
 var tile = {"id" : 1, "atlas_coords" : Vector2i(1,0), }
 var last_tile
