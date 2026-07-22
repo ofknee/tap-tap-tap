@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@onready var SPEED = Global.player_speed
+#@onready var SPEED = Global.player_speed
 @onready var JUMP_VELOCITY = Global.jump_vel
 @onready var ray = $RayCast2D
 @onready var shadow = $Shadow
@@ -22,10 +22,10 @@ func _physics_process(delta: float) -> void:
 		shadow.hide()
 	# Add the gravity.
 	if not is_on_floor():
-		if Global.accel_count > 1:
-			velocity += get_gravity() * delta * 1.1 * (1*Global.accel_count)
-		else:
-			velocity += get_gravity() * delta * 1.1
+		#if Global.accel_count > 1:
+			#velocity += get_gravity() * delta * 1.1 * (1*Global.accel_count)
+		#else:
+		velocity += get_gravity() * delta * 1.1
 	# Handle jump.
 	if Input.is_action_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -53,8 +53,8 @@ func _on_timer_timeout() -> void:
 func _input(event : InputEvent) -> void:
 	if Input.is_action_just_pressed("SWITCH"):
 		get_tree().change_scene_to_file("res://scenes/factory/factory.tscn")
-	if Global.high_score%100 == 0:
-		Global.speed = Global.speed*1.1
-		Global.player_speed = Global.player_speed*1.1
-		Global.jump_vel = Global.jump_vel*1.1
-		Global.accel_count += 1
+	#if Global.high_score%100 == 0:
+		#Global.speed = Global.speed*1.1
+		#Global.player_speed = Global.player_speed*1.1
+		#Global.jump_vel = Global.jump_vel*1.1
+		#Global.accel_count += 1
