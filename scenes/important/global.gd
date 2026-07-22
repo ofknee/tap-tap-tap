@@ -8,3 +8,6 @@ var generation: Array = [0,0,0,0,0]: ##starting money
 var speed : float = 1.0
 var score = 0
 var high_score = 0
+var jump_vel = -280
+var player_speed = 180
+var accel_count = 0
