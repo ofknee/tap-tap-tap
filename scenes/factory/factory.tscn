@@ -144,6 +144,8 @@ shadow_enabled = true
 
 [node name="YellowButton" parent="Spawnables" unique_id=623958717 instance=ExtResource("8_vv6eg")]
 visible = false
+freeze = false
+freeze_mode = 1
 
 [node name="Cone" parent="Spawnables" unique_id=1711647967 instance=ExtResource("14_64w5n")]
 visible = false
