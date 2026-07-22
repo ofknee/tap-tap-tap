@@ -62,9 +62,6 @@ points = PackedVector3Array(-0.9436528, -5.551115e-17, -0.4786345, -0.9436528, -
 material = SubResource("StandardMaterial3D_43hlm")
 size = Vector2(40, 20)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_258vx"]
-points = PackedVector3Array(20.309507, 0.31733605, 10.634921, -20.309507, -0.31733605, -10.31746, -20.309507, 0.31733605, -10.31746, 20.309507, -0.31733605, -10.31746, -20.309507, -0.31733605, 10.634921, -20.309507, 0.31733605, 10.634921, 20.309507, 0.31733605, -10.31746, 20.309507, -0.31733605, 10.634921)
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hdo8d"]
 sky_top_color = Color(0.434, 0.51150006, 0.62, 1)
 sky_horizon_color = Color(0.72165084, 0.73327583, 0.7514008, 1)
@@ -112,9 +109,6 @@ transform = Transform3D(0.9999984, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 1.449, 0.14, 
 [node name="Floor" type="MeshInstance3D" parent="Structure/Floor" unique_id=1381546789]
 mesh = SubResource("PlaneMesh_8o121")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Structure/Floor" unique_id=185229566]
-shape = SubResource("ConvexPolygonShape3D_258vx")
-
 [node name="Dropper" type="Node3D" parent="Structure" unique_id=398029324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91, 0, 0)
 script = ExtResource("8_ggcq3")
@@ -130,7 +124,7 @@ transform = Transform3D(1.623, 0, 0, 0, -1.193, 2.5110603e-07, 0, -1.8013799e-07
 transform = Transform3D(1.2419455e-15, 2.8412401e-08, 0.65, 0.65, -2.8412401e-08, 0, 2.8412401e-08, 0.65, -2.8412401e-08, 0, 6.784936, -1.1140388)
 
 [node name="Spawnpoint" type="Marker3D" parent="Structure/Dropper" unique_id=1691764502]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0406203, -1.52)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.933174, -1.52)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=409856805]
 environment = SubResource("Environment_3gw73")

@@ -166,3 +166,5 @@ shape = SubResource("ConvexPolygonShape3D_jxtu7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1169510829]
 libraries/ = SubResource("AnimationLibrary_ads8e")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
