@@ -13,8 +13,8 @@ func _physics_process(delta: float) -> void:
 	hs_label.text = " High Score: " + str(Global.high_score)
 
 	if Input.is_action_pressed("SWITCH"):
-		pass
-
+		get_tree().change_scene_to_file("res://scenes/factory/factory.tscn")
+		
 	if ray.is_colliding():
 		shadow.show()
 			
