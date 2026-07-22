@@ -1,5 +1,5 @@
 extends TileMapLayer
-var speed : float = Global.speed
+#var speed : float = Global.speed
 var spawnpoint = Vector2i(5,-1)
 var tile = {"id" : 1, "atlas_coords" : Vector2i(1,0), }
 var last_tile
@@ -29,7 +29,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	global_position -= Vector2(speed*2, -speed)
+	global_position -= Vector2(Global.speed*2, -Global.speed)
 	for tile in get_used_cells():
 		var world_pos = to_global(map_to_local(tile))
 		if world_pos.x < -32:

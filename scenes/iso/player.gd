@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 180.0
-const JUMP_VELOCITY = -280.0
+@onready var SPEED = Global.player_speed
+@onready var JUMP_VELOCITY = Global.jump_vel
 @onready var ray = $RayCast2D
 @onready var shadow = $Shadow
 @onready var score_label = $"../Timer/HBoxContainer/score"
@@ -22,8 +22,10 @@ func _physics_process(delta: float) -> void:
 		shadow.hide()
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta * 1.1
-
+		if Global.accel_count > 1:
+			velocity += get_gravity() * delta * 1.1 * (1.015*Global.accel_count)
+		else:
+			velocity += get_gravity() * delta * 1.1
 	# Handle jump.
 	if Input.is_action_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -47,3 +49,8 @@ func add_point():
 
 func _on_timer_timeout() -> void:
 	add_point()
+	if Global.high_score%100 == 0:
+		Global.speed = Global.speed*1.1
+		Global.player_speed = Global.player_speed*1.1
+		Global.jump_vel = Global.jump_vel*1.1
+		Global.accel_count += 1
