@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://wkur7bfdvfoo"]
 
 [ext_resource type="PackedScene" uid="uid://j28wlyk5oqu2" path="res://scenes/iso/jump_strip.tscn" id="1_uup8x"]
-[ext_resource type="FontFile" uid="uid://2da6qudswrlh" path="res://assets/DeathMachineFont_v240330/DeathMachine.ttf" id="2_0peuu"]
 [ext_resource type="Texture2D" uid="uid://b7ciyxbnwtvme" path="res://assets/iso/sphere.png" id="3_43k1h"]
 [ext_resource type="Script" uid="uid://bhgujarx8u4nd" path="res://scenes/iso/player.gd" id="3_twlvc"]
 [ext_resource type="FontFile" uid="uid://2da6qudswrlh" path="res://assets/DeathMachineFont_v240330/DeathMachine.ttf" id="3_x5jbj"]
@@ -85,7 +84,7 @@ shape = SubResource("CircleShape2D_weljr")
 [node name="RayCast2D" type="RayCast2D" parent="player" unique_id=690951229]
 
 [node name="killzone" parent="." unique_id=1663306613 instance=ExtResource("4_43k1h")]
-position = Vector2(0, 870)
+position = Vector2(17, 3670)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=59841531]
 shape = SubResource("WorldBoundaryShape2D_l57lt")

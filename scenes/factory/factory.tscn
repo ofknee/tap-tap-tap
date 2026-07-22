@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://sb256gmuy68a" path="res://scenes/factory/spawnables/yellow_button.tscn" id="8_vv6eg"]
 [ext_resource type="PackedScene" uid="uid://b1u1fh6yh2x5y" path="res://scenes/factory/spawnables/large_box.tscn" id="9_7v5iq"]
 [ext_resource type="PackedScene" uid="uid://phs5vng6g8vd" path="res://scenes/factory/spawnables/small_box.tscn" id="10_ggcq3"]
+[ext_resource type="PackedScene" uid="uid://wdvijwr50mi7" path="res://scenes/factory/killzone_3d.tscn" id="13_5pcoe"]
 [ext_resource type="PackedScene" uid="uid://bjlid7rqnh751" path="res://scenes/factory/spawnables/cone.tscn" id="14_64w5n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5pcoe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3mfs"]
 resource_name = "colormap"
@@ -75,6 +78,12 @@ background_mode = 2
 sky = SubResource("Sky_37mx5")
 
 [node name="Factory" type="Node3D" unique_id=218373315]
+
+[node name="killzone3d" parent="." unique_id=730149286 instance=ExtResource("13_5pcoe")]
+transform = Transform3D(600, 0, 0, 0, 600, 0, 0, 0, 600, -6.0462136, 1.764451, -1.0036994)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="killzone3d" unique_id=152740998]
+shape = SubResource("BoxShape3D_5pcoe")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1257165625]
 transform = Transform3D(0.9304175, 0.18576209, -0.31593636, 0, 0.86203295, 0.5068522, 0.36650148, -0.47158414, 0.80205053, -1.3748722, 7.827965, 5.9920616)
