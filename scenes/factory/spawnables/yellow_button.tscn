@@ -30,7 +30,7 @@ points = PackedVector3Array(0.009047202, 0, 0.2001139, 0.25396827, 0.10713199, 0
 [node name="YellowButton" unique_id=623958717 instance=ExtResource("1_r0x8s")]
 script = ExtResource("1_h7vt5")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="button-floor-square-small" parent_id_path=PackedInt32Array(1794528445) index="1" unique_id=188412392]
+[node name="StaticBody3D" type="RigidBody3D" parent="button-floor-square-small" parent_id_path=PackedInt32Array(1794528445) index="1" unique_id=725792178]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="button-floor-square-small/StaticBody3D" index="0" unique_id=1404420247]
 shape = SubResource("ConvexPolygonShape3D_h7vt5")
