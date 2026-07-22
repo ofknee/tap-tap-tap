@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://wkur7bfdvfoo"]
 
 [ext_resource type="PackedScene" uid="uid://j28wlyk5oqu2" path="res://scenes/iso/jump_strip.tscn" id="1_uup8x"]
-[ext_resource type="FontFile" uid="uid://2da6qudswrlh" path="res://assets/DeathMachineFont_v240330/DeathMachine.ttf" id="2_0peuu"]
-[ext_resource type="Texture2D" uid="uid://b7ciyxbnwtvme" path="res://assets/sphere.png" id="3_43k1h"]
+[ext_resource type="FontFile" uid="uid://dxemj55erv84h" path="res://assets/phased-1.2/Phased.ttf" id="2_0peuu"]
+[ext_resource type="Texture2D" uid="uid://b7ciyxbnwtvme" path="res://assets/iso/sphere.png" id="3_43k1h"]
 [ext_resource type="Script" uid="uid://bhgujarx8u4nd" path="res://scenes/iso/player.gd" id="3_twlvc"]
 [ext_resource type="PackedScene" uid="uid://cy63vrwb4d4ns" path="res://killzone.tscn" id="4_43k1h"]
 [ext_resource type="Texture2D" uid="uid://cj3q5gweuqo2v" path="res://assets/iso/shadow.png" id="4_twlvc"]
@@ -26,10 +26,11 @@ wait_time = 0.1
 autostart = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Timer" unique_id=665041965]
-offset_top = -59.0
-offset_right = 327.45892
-offset_bottom = 11.0
-scale = Vector2(3.4666703, 3.4690914)
+offset_left = -1.0
+offset_top = -32.0
+offset_right = 326.45892
+offset_bottom = 38.0
+scale = Vector2(2.2741828, 2.2741828)
 
 [node name="score" type="Label" parent="Timer/HBoxContainer" unique_id=711261665]
 texture_filter = 3
@@ -44,18 +45,19 @@ justification_flags = 227
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -396.00003
-offset_top = -60.0
-offset_right = -291.0
-offset_bottom = 10.0
+offset_left = -408.0
+offset_top = -35.0
+offset_right = -251.0
+offset_bottom = 35.0
 grow_horizontal = 0
-scale = Vector2(3.5974882, 3.6000006)
+scale = Vector2(2.360001, 2.360001)
 
 [node name="highScore" type="Label" parent="Timer/HBoxContainer2" unique_id=1883384086]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("2_0peuu")
+theme_override_font_sizes/font_size = 16
 text = " High Score: 0"
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1696932186]
