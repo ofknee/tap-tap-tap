@@ -19,7 +19,7 @@ func spawn_new(type : int):
 			if randi_range(0,1) == 0:
 				inst = large_box.instantiate()
 			else:
-				inst = large_box.instantiate()
+				inst = small_box.instantiate()
 			inst.rotation.y = deg_to_rad(randf_range(0.0, 360.0))
 		1:
 			inst = yellow_button.instantiate()

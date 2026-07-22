@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://ocvd3bfp0jvr" path="res://scenes/factory/spawner.gd" id="4_7wd4f"]
 [ext_resource type="PackedScene" uid="uid://c0d2h3nlqr03j" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/hopper-high-square.glb" id="4_kr1kb"]
 [ext_resource type="PackedScene" uid="uid://cvytfcd7y3m12" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/arrow-basic.glb" id="5_7wd4f"]
+[ext_resource type="Script" uid="uid://c4xdxysvlh17f" path="res://scenes/factory/dropper.gd" id="8_ggcq3"]
 [ext_resource type="PackedScene" uid="uid://sb256gmuy68a" path="res://scenes/factory/spawnables/yellow_button.tscn" id="8_vv6eg"]
+[ext_resource type="PackedScene" uid="uid://c44i55pkduavl" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/cone.glb" id="9_5pcoe"]
 [ext_resource type="PackedScene" uid="uid://b1u1fh6yh2x5y" path="res://scenes/factory/spawnables/large_box.tscn" id="9_7v5iq"]
 [ext_resource type="PackedScene" uid="uid://phs5vng6g8vd" path="res://scenes/factory/spawnables/small_box.tscn" id="10_ggcq3"]
 
@@ -32,7 +34,7 @@ sky = SubResource("Sky_37mx5")
 [node name="Factory" type="Node3D" unique_id=218373315]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1257165625]
-transform = Transform3D(0.9304175, 0.1857621, -0.3159364, 0, 0.86203295, 0.5068522, 0.3665015, -0.47158414, 0.80205053, -1.3748746, 7.827964, 5.9920607)
+transform = Transform3D(0.9304175, 0.18576209, -0.31593636, 0, 0.86203295, 0.5068522, 0.36650148, -0.47158414, 0.80205053, -1.3748722, 7.827965, 5.9920616)
 
 [node name="Structure" type="Node3D" parent="." unique_id=1110542878]
 
@@ -42,14 +44,14 @@ transform = Transform3D(-40, -4.210105e-22, -1.2763724e-07, 0, 3.36, -7.1054274e
 [node name="ConveyerBelt" parent="Structure" unique_id=293472886 instance=ExtResource("1_hdo8d")]
 transform = Transform3D(40, 0, 0, 0, 1.5063945, 0, 0, 0, 2.903504, 0, 0, -1.3745146)
 
-[node name="Spawner" parent="Structure" unique_id=1282206509 instance=ExtResource("3_37mx5")]
+[node name="ConveyerSpawner" parent="Structure" unique_id=1282206509 instance=ExtResource("3_37mx5")]
 transform = Transform3D(6.02, 0, 0, 0, 3.87, 0, 0, 0, 3.14, 10.287131, 0, -1.372)
 script = ExtResource("4_7wd4f")
 large_box = ExtResource("9_7v5iq")
 small_box = ExtResource("10_ggcq3")
 yellow_button = ExtResource("8_vv6eg")
 
-[node name="Spawnpoint" type="Marker3D" parent="Structure/Spawner" unique_id=1631144658]
+[node name="Spawnpoint" type="Marker3D" parent="Structure/ConveyerSpawner" unique_id=1631144658]
 transform = Transform3D(0.9999984, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 1.449, 0.14, 0.006)
 
 [node name="Floor" type="MeshInstance3D" parent="Structure" unique_id=1381546789]
@@ -57,6 +59,8 @@ mesh = SubResource("PlaneMesh_8o121")
 
 [node name="Dropper" type="Node3D" parent="Structure" unique_id=398029324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91, 0, 0)
+script = ExtResource("8_ggcq3")
+drop = ExtResource("9_5pcoe")
 
 [node name="piston-square2" parent="Structure/Dropper" unique_id=1763198130 instance=ExtResource("3_3gw73")]
 transform = Transform3D(1.4858476, 0, 0, 0, -2.1843334e-07, 1.2181902, 0, -4.9971724, -5.3248783e-08, 0, 6.8170114, -1.0524473)
@@ -66,6 +70,9 @@ transform = Transform3D(1.623, 0, 0, 0, -1.193, 2.5110603e-07, 0, -1.8013799e-07
 
 [node name="arrow-basic2" parent="Structure/Dropper" unique_id=389735274 instance=ExtResource("5_7wd4f")]
 transform = Transform3D(1.2419455e-15, 2.8412401e-08, 0.65, 0.65, -2.8412401e-08, 0, 2.8412401e-08, 0.65, -2.8412401e-08, 0, 6.784936, -1.1140388)
+
+[node name="Spawnpoint" type="Marker3D" parent="Structure/Dropper" unique_id=1691764502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.152659, -1.52)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=409856805]
 environment = SubResource("Environment_3gw73")
