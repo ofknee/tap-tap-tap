@@ -28,7 +28,7 @@ func _ready() -> void:
 				#set_cell(neighbor, 0, Vector2i(9,0))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	global_position -= Vector2(Global.speed*2, -Global.speed)
 	for tile in get_used_cells():
 		var world_pos = to_global(map_to_local(tile))
