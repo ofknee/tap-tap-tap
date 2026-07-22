@@ -82,6 +82,7 @@ sky = SubResource("Sky_37mx5")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1257165625]
 transform = Transform3D(0.9304175, 0.18576209, -0.31593636, 0, 0.86203295, 0.5068522, 0.36650148, -0.47158414, 0.80205053, -1.3748722, 7.827965, 5.9920616)
 
+
 [node name="Structure" type="Node3D" parent="." unique_id=1110542878]
 
 [node name="Wall" parent="Structure" unique_id=198059091 instance=ExtResource("2_37mx5")]
