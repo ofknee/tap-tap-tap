@@ -82,6 +82,7 @@ scale = Vector2(2.0410643, 2.0410643)
 shape = SubResource("CircleShape2D_weljr")
 
 [node name="RayCast2D" type="RayCast2D" parent="player" unique_id=690951229]
+target_position = Vector2(0, 55)
 
 [node name="killzone" parent="." unique_id=1663306613 instance=ExtResource("4_43k1h")]
 position = Vector2(17, 3670)
