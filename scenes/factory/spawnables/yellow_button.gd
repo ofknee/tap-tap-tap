@@ -1,6 +1,7 @@
 extends RigidBody3D
 
 var speed = Global.speed/70
+@onready var top : CollisionShape3D = $CollisionShape3D2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +16,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
 	var owner_id = shape_find_owner(local_shape_index)
 	var shape_node = shape_owner_get_owner(owner_id)
-	if shape_node == $CollisionShape3D2:
+	if shape_node == top:
 		if "is_stuck" in body and not body.is_stuck:
 			body.is_stuck = true
 			call_deferred("stick_to_button", body)
