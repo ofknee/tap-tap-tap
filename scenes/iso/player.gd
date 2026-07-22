@@ -12,6 +12,9 @@ func _physics_process(delta: float) -> void:
 	
 	hs_label.text = " High Score: " + str(Global.high_score)
 
+	if Input.is_action_pressed("SWITCH"):
+		pass
+
 	if ray.is_colliding():
 		shadow.show()
 			
