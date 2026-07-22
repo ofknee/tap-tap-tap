@@ -13,5 +13,35 @@ func _physics_process(delta: float) -> void:
 	position.x -= speed
 
 
+<<<<<<< Updated upstream
 func _on_rigid_body_3d_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
 		print("i got hit by", body.name)
+=======
+func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
+	var owner_id = shape_find_owner(local_shape_index)
+	var shape_node = shape_owner_get_owner(owner_id)
+	if shape_node == $CollisionShape3D2:
+		if "is_stuck" in body and not body.is_stuck:
+			body.is_stuck = true
+			call_deferred("stick_to_button", body)
+func stick_to_button(body: Node) -> void:
+	if body.get_parent() == self:
+		return # already stuck
+	var world_transform = body.global_transform
+
+	if body.get_parent():
+		body.get_parent().remove_child(body)
+	add_child(body)
+	body.global_transform = world_transform
+
+	if body is RigidBody3D:
+		body.freeze = true
+		body.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
+		body.linear_velocity = Vector3.ZERO
+		body.angular_velocity = Vector3.ZERO
+
+	if body.has_method("emit_stuck_signal"):
+		body.emit_stuck_signal()
+		
+	#print("estoy stuck, ", name, " to ", body.name)
+>>>>>>> Stashed changes
