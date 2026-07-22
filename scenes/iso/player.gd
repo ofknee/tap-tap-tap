@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		if Global.accel_count > 1:
-			velocity += get_gravity() * delta * 1.1 * (1.015*Global.accel_count)
+			velocity += get_gravity() * delta * 1.1 * (1*Global.accel_count)
 		else:
 			velocity += get_gravity() * delta * 1.1
 	# Handle jump.
@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	#	velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
+ 
 func add_point():
 	Global.score += 1
 	if Global.score > Global.high_score:
