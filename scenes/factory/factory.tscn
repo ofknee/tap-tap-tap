@@ -11,11 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://sb256gmuy68a" path="res://scenes/factory/spawnables/yellow_button.tscn" id="8_vv6eg"]
 [ext_resource type="PackedScene" uid="uid://b1u1fh6yh2x5y" path="res://scenes/factory/spawnables/large_box.tscn" id="9_7v5iq"]
 [ext_resource type="PackedScene" uid="uid://phs5vng6g8vd" path="res://scenes/factory/spawnables/small_box.tscn" id="10_ggcq3"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://bvranqd83fwsd" path="res://scenes/factory/killzone3d.tscn" id="13_5pcoe"]
-=======
-[ext_resource type="PackedScene" uid="uid://bg4kdqk2v63g8" path="res://scenes/factory/killzone3d.tscn" id="13_5pcoe"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bjlid7rqnh751" path="res://scenes/factory/spawnables/cone.tscn" id="14_64w5n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3mfs"]
@@ -79,8 +74,6 @@ sky_material = SubResource("ProceduralSkyMaterial_hdo8d")
 background_mode = 2
 sky = SubResource("Sky_37mx5")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5pcoe"]
-
 [node name="Factory" type="Node3D" unique_id=218373315]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1257165625]
@@ -140,16 +133,3 @@ environment = SubResource("Environment_3gw73")
 transform = Transform3D(0.3810702, 0.7823446, -0.49266872, 0, 0.5328763, 0.84619313, 0.9245461, -0.32245898, 0.20306328, 0, 0, 0)
 light_color = Color(0.7144246, 0.58231264, 0.99841934, 1)
 shadow_enabled = true
-
-[node name="Area3D" parent="." unique_id=1451414579 instance=ExtResource("13_5pcoe")]
-<<<<<<< Updated upstream
-transform = Transform3D(600, 0, 0, 0, 600, 0, 0, 0, 600, -8.510899, 2.9939594, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=502174673]
-=======
-transform = Transform3D(600, 0, 0, 0, 600, 0, 0, 0, 600, -8.1014595, 1.7363739, -1.6726332)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=535480817]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
-shape = SubResource("BoxShape3D_5pcoe")
->>>>>>> Stashed changes
