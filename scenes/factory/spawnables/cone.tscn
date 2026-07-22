@@ -43,9 +43,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fi624")
 
-[node name="Cone" type="Node3D" unique_id=1711647967]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+[sub_resource type="BoxShape3D" id="BoxShape3D_43hlm"]
+size = Vector3(0.8, 0.9, 0.793)
+
+[node name="Cone" type="RigidBody3D" unique_id=679464623]
 script = ExtResource("1_bvfjw")
 
 [node name="cone" type="MeshInstance3D" parent="." unique_id=1469431909]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_enmjv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=435088185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.458, 0)
+shape = SubResource("BoxShape3D_43hlm")
