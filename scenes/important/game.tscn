@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://wkur7bfdvfoo"]
 
 [ext_resource type="PackedScene" uid="uid://j28wlyk5oqu2" path="res://scenes/iso/jump_strip.tscn" id="1_uup8x"]
-[ext_resource type="FontFile" uid="uid://dxemj55erv84h" path="res://assets/phased-1.2/Phased.ttf" id="2_0peuu"]
 [ext_resource type="Texture2D" uid="uid://b7ciyxbnwtvme" path="res://assets/iso/sphere.png" id="3_43k1h"]
 [ext_resource type="Script" uid="uid://bhgujarx8u4nd" path="res://scenes/iso/player.gd" id="3_twlvc"]
+[ext_resource type="FontFile" uid="uid://2da6qudswrlh" path="res://assets/DeathMachineFont_v240330/DeathMachine.ttf" id="3_x5jbj"]
 [ext_resource type="PackedScene" uid="uid://cy63vrwb4d4ns" path="res://killzone.tscn" id="4_43k1h"]
 [ext_resource type="Texture2D" uid="uid://cj3q5gweuqo2v" path="res://assets/iso/shadow.png" id="4_twlvc"]
 
@@ -36,7 +36,7 @@ scale = Vector2(2.2741828, 2.2741828)
 texture_filter = 3
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_0peuu")
+theme_override_fonts/font = ExtResource("3_x5jbj")
 theme_override_font_sizes/font_size = 16
 text = " Score: 0"
 justification_flags = 227
@@ -45,10 +45,10 @@ justification_flags = 227
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -408.0
-offset_top = -35.0
-offset_right = -251.0
-offset_bottom = 35.0
+offset_left = -279.0
+offset_top = -33.0
+offset_right = -122.0
+offset_bottom = 37.0
 grow_horizontal = 0
 scale = Vector2(2.360001, 2.360001)
 
@@ -56,7 +56,7 @@ scale = Vector2(2.360001, 2.360001)
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_fonts/font = ExtResource("2_0peuu")
+theme_override_fonts/font = ExtResource("3_x5jbj")
 theme_override_font_sizes/font_size = 16
 text = " High Score: 0"
 
