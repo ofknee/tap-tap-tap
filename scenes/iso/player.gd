@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var score_label = $"../Timer/HBoxContainer/score"
 @onready var hs_label = $"../Timer/HBoxContainer2/highScore"
 
+
 func _physics_process(delta: float) -> void:
 	
 	hs_label.text = " High Score: " + str(Global.high_score)
@@ -29,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		SignalBus.tap.emit()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

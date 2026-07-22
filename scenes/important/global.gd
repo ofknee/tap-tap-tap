@@ -5,9 +5,9 @@ var generation: Array = [0,0,0,0,0]: ##starting money
 		generation = new_generation
 		generation_updated.emit(generation)
 
-var speed : float = 1.0
+var speed : float = 1.1
 var score = 0
 var high_score = 0
 var jump_vel = -380
-var player_speed = 220
-var accel_count = 0
+
+var floor_check : bool = false
