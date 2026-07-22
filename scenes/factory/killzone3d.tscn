@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bvranqd83fwsd"]
+
+[ext_resource type="Script" uid="uid://dapk61jgbexr3" path="res://scenes/factory/killzone3d.gd" id="1_f5lnp"]
+
+[node name="Area3D" type="Area3D" unique_id=1451414579]
+script = ExtResource("1_f5lnp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
