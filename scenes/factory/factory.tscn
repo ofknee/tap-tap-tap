@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://sb256gmuy68a" path="res://scenes/factory/spawnables/yellow_button.tscn" id="8_vv6eg"]
 [ext_resource type="PackedScene" uid="uid://b1u1fh6yh2x5y" path="res://scenes/factory/spawnables/large_box.tscn" id="9_7v5iq"]
 [ext_resource type="PackedScene" uid="uid://phs5vng6g8vd" path="res://scenes/factory/spawnables/small_box.tscn" id="10_ggcq3"]
+[ext_resource type="PackedScene" uid="uid://wdvijwr50mi7" path="res://scenes/factory/killzone_3d.tscn" id="13_5pcoe"]
 [ext_resource type="PackedScene" uid="uid://bjlid7rqnh751" path="res://scenes/factory/spawnables/cone.tscn" id="14_64w5n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5pcoe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3mfs"]
 resource_name = "colormap"
@@ -62,9 +65,6 @@ points = PackedVector3Array(-0.9436528, -5.551115e-17, -0.4786345, -0.9436528, -
 material = SubResource("StandardMaterial3D_43hlm")
 size = Vector2(40, 20)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_258vx"]
-points = PackedVector3Array(20.309507, 0.31733605, 10.634921, -20.309507, -0.31733605, -10.31746, -20.309507, 0.31733605, -10.31746, 20.309507, -0.31733605, -10.31746, -20.309507, -0.31733605, 10.634921, -20.309507, 0.31733605, 10.634921, 20.309507, 0.31733605, -10.31746, 20.309507, -0.31733605, 10.634921)
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hdo8d"]
 sky_top_color = Color(0.434, 0.51150006, 0.62, 1)
 sky_horizon_color = Color(0.72165084, 0.73327583, 0.7514008, 1)
@@ -79,8 +79,14 @@ sky = SubResource("Sky_37mx5")
 
 [node name="Factory" type="Node3D" unique_id=218373315]
 
+[node name="killzone3d" parent="." unique_id=730149286 instance=ExtResource("13_5pcoe")]
+transform = Transform3D(600, 0, 0, 0, 600, 0, 0, 0, 600, -6.0462136, 1.764451, -1.0036994)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="killzone3d" unique_id=152740998]
+shape = SubResource("BoxShape3D_5pcoe")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1257165625]
-transform = Transform3D(0.9304175, 0.18576209, -0.31593636, 0, 0.86203295, 0.5068522, 0.36650148, -0.47158414, 0.80205053, -1.3748722, 7.827965, 5.9920616)
+transform = Transform3D(0.9588196, 0.11531295, -0.2595531, 0, 0.913869, 0.40600914, 0.28401566, -0.38928953, 0.87623554, -4.8916397, 7.138565, 10.710754)
 
 
 [node name="Structure" type="Node3D" parent="." unique_id=1110542878]
@@ -113,11 +119,8 @@ transform = Transform3D(0.9999984, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 1.449, 0.14, 
 [node name="Floor" type="MeshInstance3D" parent="Structure/Floor" unique_id=1381546789]
 mesh = SubResource("PlaneMesh_8o121")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Structure/Floor" unique_id=185229566]
-shape = SubResource("ConvexPolygonShape3D_258vx")
-
 [node name="Dropper" type="Node3D" parent="Structure" unique_id=398029324]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.261569, 0, 0)
 script = ExtResource("8_ggcq3")
 drop = ExtResource("14_64w5n")
 
@@ -131,7 +134,7 @@ transform = Transform3D(1.623, 0, 0, 0, -1.193, 2.5110603e-07, 0, -1.8013799e-07
 transform = Transform3D(1.2419455e-15, 2.8412401e-08, 0.65, 0.65, -2.8412401e-08, 0, 2.8412401e-08, 0.65, -2.8412401e-08, 0, 6.784936, -1.1140388)
 
 [node name="Spawnpoint" type="Marker3D" parent="Structure/Dropper" unique_id=1691764502]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0406203, -1.52)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.933174, -1.52)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=409856805]
 environment = SubResource("Environment_3gw73")
@@ -140,16 +143,3 @@ environment = SubResource("Environment_3gw73")
 transform = Transform3D(0.3810702, 0.7823446, -0.49266872, 0, 0.5328763, 0.84619313, 0.9245461, -0.32245898, 0.20306328, 0, 0, 0)
 light_color = Color(0.7144246, 0.58231264, 0.99841934, 1)
 shadow_enabled = true
-
-[node name="Spawnables" type="Node3D" parent="." unique_id=1442845570]
-visible = false
-
-[node name="YellowButton" parent="Spawnables" unique_id=623958717 instance=ExtResource("8_vv6eg")]
-visible = false
-
-[node name="Cone" parent="Spawnables" unique_id=1711647967 instance=ExtResource("14_64w5n")]
-visible = false
-
-[node name="LargeBox" parent="Spawnables" unique_id=2039763689 instance=ExtResource("9_7v5iq")]
-
-[node name="SmallBox" parent="Spawnables" unique_id=1158103182 instance=ExtResource("10_ggcq3")]

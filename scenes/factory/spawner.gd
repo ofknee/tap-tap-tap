@@ -16,16 +16,18 @@ func spawn_new(type : int):
 	var inst : Node3D
 	match type:
 		0:
-			if randi_range(0,1) == 0:
-				inst = large_box.instantiate()
-			else:
-				inst = small_box.instantiate()
-			inst.rotation.y = deg_to_rad(randf_range(0.0, 360.0))
+			pass
+			#if randi_range(0,1) == 0:
+				#inst = large_box.instantiate()
+			#else:
+				#inst = small_box.instantiate()
+			#inst.rotation.y = deg_to_rad(randf_range(0.0, 360.0))
 		1:
 			inst = yellow_button.instantiate()
+			add_child(inst)
+			inst.global_position = spawnpoint.global_position
 	
-	add_child(inst)
-	inst.global_position = spawnpoint.global_position
+	
 
 
 func _input(event : InputEvent) -> void:

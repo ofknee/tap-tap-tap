@@ -47,10 +47,10 @@ justification_flags = 227
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -279.0
-offset_top = -33.0
-offset_right = -122.0
-offset_bottom = 37.0
+offset_left = -278.0
+offset_top = -30.0
+offset_right = -121.0
+offset_bottom = 40.0
 grow_horizontal = 0
 scale = Vector2(2.360001, 2.360001)
 
@@ -84,7 +84,7 @@ shape = SubResource("CircleShape2D_weljr")
 [node name="RayCast2D" type="RayCast2D" parent="player" unique_id=690951229]
 
 [node name="killzone" parent="." unique_id=1663306613 instance=ExtResource("4_43k1h")]
-position = Vector2(0, 870)
+position = Vector2(17, 3670)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=59841531]
 shape = SubResource("WorldBoundaryShape2D_l57lt")

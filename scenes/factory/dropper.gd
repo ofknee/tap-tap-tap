@@ -15,6 +15,7 @@ func spawn_drop() -> void:
 	var inst = drop.instantiate()
 	add_child(inst)
 	inst.global_position = spawnpoint.global_position
+
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
