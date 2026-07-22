@@ -24,9 +24,10 @@ func spawn_new(type : int):
 			#inst.rotation.y = deg_to_rad(randf_range(0.0, 360.0))
 		1:
 			inst = yellow_button.instantiate()
+			add_child(inst)
+			inst.global_position = spawnpoint.global_position
 	
-	add_child(inst)
-	inst.global_position = spawnpoint.global_position
+	
 
 
 func _input(event : InputEvent) -> void:

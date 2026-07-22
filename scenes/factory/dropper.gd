@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func _input(event : InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		spawn_drop()
+		await spawn_drop()
 	if Input.is_action_just_pressed("SWITCH"):
 		get_tree().change_scene_to_file("res://scenes/important/game.tscn")
 
@@ -15,6 +15,8 @@ func spawn_drop() -> void:
 	var inst = drop.instantiate()
 	add_child(inst)
 	inst.global_position = spawnpoint.global_position
+	await get_tree().create_timer(Global.speed).timeout
+
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
