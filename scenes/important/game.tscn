@@ -14,6 +14,8 @@ radius = 8.818932
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l57lt"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_weljr"]
+
 [node name="game" type="Node2D" unique_id=1528345599]
 
 [node name="JumpStrip" parent="." unique_id=883491700 instance=ExtResource("1_uup8x")]
@@ -86,5 +88,12 @@ position = Vector2(0, 870)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=59841531]
 shape = SubResource("WorldBoundaryShape2D_l57lt")
+
+[node name="killzone2" parent="." unique_id=1216286320 instance=ExtResource("4_43k1h")]
+position = Vector2(-79, 159)
+rotation = 1.581708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2" unique_id=1518943514]
+shape = SubResource("WorldBoundaryShape2D_weljr")
 
 [connection signal="timeout" from="Timer" to="player" method="_on_timer_timeout"]
