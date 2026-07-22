@@ -141,7 +141,6 @@ light_color = Color(0.7144246, 0.58231264, 0.99841934, 1)
 shadow_enabled = true
 
 [node name="Spawnables" type="Node3D" parent="." unique_id=1442845570]
-visible = false
 
 [node name="YellowButton" parent="Spawnables" unique_id=623958717 instance=ExtResource("8_vv6eg")]
 visible = false
@@ -150,5 +149,7 @@ visible = false
 visible = false
 
 [node name="LargeBox" parent="Spawnables" unique_id=2039763689 instance=ExtResource("9_7v5iq")]
+visible = false
 
 [node name="SmallBox" parent="Spawnables" unique_id=1158103182 instance=ExtResource("10_ggcq3")]
+visible = false
