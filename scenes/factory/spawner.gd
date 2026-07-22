@@ -29,7 +29,7 @@ func spawn_new(type : int):
 
 
 func _input(event : InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("RIGHT"):
 		spawn_new(0)
 	if Input.is_action_just_pressed("LEFT"):
 		spawn_new(1)

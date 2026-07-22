@@ -224,7 +224,7 @@ transform = Transform3D(1.623, 0, 0, 0, -1.193, 2.5110603e-07, 0, -1.8013799e-07
 transform = Transform3D(1.2419455e-15, 2.8412401e-08, 0.65, 0.65, -2.8412401e-08, 0, 2.8412401e-08, 0.65, -2.8412401e-08, 0, 6.784936, -1.1140388)
 
 [node name="Spawnpoint" type="Marker3D" parent="Structure/Dropper" unique_id=1691764502]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.152659, -1.52)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0406203, -1.52)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=409856805]
 environment = SubResource("Environment_3gw73")
