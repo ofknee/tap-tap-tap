@@ -12,7 +12,6 @@ func _input(event : InputEvent) -> void:
 
 func spawn_drop() -> void:
 	var inst = drop.instantiate()
-	drop.scale = Vector2(2,2)
 	add_child(inst)
 	inst.global_position = spawnpoint.global_position
 	

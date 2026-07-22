@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://sb256gmuy68a"]
 
+[ext_resource type="Script" uid="uid://csn80djedknb5" path="res://scenes/factory/spawnable.gd" id="1_h7vt5"]
 [ext_resource type="PackedScene" uid="uid://cma2taslm6sls" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/button-floor-square-small.glb" id="1_r0x8s"]
 
 [node name="button-floor-square-small2" unique_id=623958717 instance=ExtResource("1_r0x8s")]
+script = ExtResource("1_h7vt5")

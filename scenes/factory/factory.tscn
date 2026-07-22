@@ -10,9 +10,9 @@
 [ext_resource type="Script" uid="uid://csn80djedknb5" path="res://scenes/factory/spawnable.gd" id="7_258vx"]
 [ext_resource type="Texture2D" uid="uid://dbqvb655pc83e" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/Textures/colormap.png" id="8_64w5n"]
 [ext_resource type="Script" uid="uid://c4xdxysvlh17f" path="res://scenes/factory/dropper.gd" id="8_ggcq3"]
-[ext_resource type="PackedScene" uid="uid://c44i55pkduavl" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/cone.glb" id="9_5pcoe"]
 [ext_resource type="PackedScene" uid="uid://b1u1fh6yh2x5y" path="res://scenes/factory/spawnables/large_box.tscn" id="9_7v5iq"]
 [ext_resource type="PackedScene" uid="uid://phs5vng6g8vd" path="res://scenes/factory/spawnables/small_box.tscn" id="10_ggcq3"]
+[ext_resource type="PackedScene" uid="uid://bjlid7rqnh751" path="res://scenes/factory/spawnables/cone.tscn" id="14_64w5n"]
 [ext_resource type="PackedScene" uid="uid://cma2taslm6sls" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/button-floor-square-small.glb" id="14_i4dya"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrxwa"]
@@ -212,7 +212,7 @@ mesh = SubResource("PlaneMesh_8o121")
 [node name="Dropper" type="Node3D" parent="Structure" unique_id=398029324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91, 0, 0)
 script = ExtResource("8_ggcq3")
-drop = ExtResource("9_5pcoe")
+drop = ExtResource("14_64w5n")
 
 [node name="piston-square2" parent="Structure/Dropper" unique_id=1763198130 instance=ExtResource("3_3gw73")]
 transform = Transform3D(1.4858476, 0, 0, 0, -2.1843334e-07, 1.2181902, 0, -4.9971724, -5.3248783e-08, 0, 6.8170114, -1.0524473)
@@ -236,6 +236,8 @@ shadow_enabled = true
 
 [node name="Spawnables" type="Node3D" parent="." unique_id=1442845570]
 visible = false
+
+[node name="Cone" parent="Spawnables" unique_id=1711647967 instance=ExtResource("14_64w5n")]
 
 [node name="Yellow Button" parent="Spawnables" unique_id=623958717 instance=ExtResource("14_i4dya")]
 visible = false
