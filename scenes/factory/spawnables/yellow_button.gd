@@ -1,7 +1,7 @@
 extends RigidBody3D
 
-var speed = Global.speed/70
-@onready var top : CollisionShape3D = $CollisionShape3D2
+var speed = Global.speed/90
+@onready var top : CollisionShape3D = $Top
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

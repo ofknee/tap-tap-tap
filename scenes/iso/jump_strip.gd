@@ -6,7 +6,9 @@ var last_tile
 var generation = Global.generation
 
 func _ready() -> void:
+	generation = [0,0,0,0,0,0,0,0,0,0]
 	SignalBus.spawn_new.connect(spawn_tile)
+	
 	
 	for i in range(10):
 		if generation[-1] == 0:
@@ -39,7 +41,7 @@ func _physics_process(delta: float) -> void:
 				generation.append(randi_range(0,1))
 			else:
 				generation.append(0) 
-				SignalBus.spawn_new.emit(generation[-1])
+			
 			SignalBus.spawn_new.emit(generation[-1])
 
 func spawn_tile(type:int) -> void:
