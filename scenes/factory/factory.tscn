@@ -142,3 +142,5 @@ environment = SubResource("Environment_3gw73")
 transform = Transform3D(0.3810702, 0.7823446, -0.49266872, 0, 0.5328763, 0.84619313, 0.9245461, -0.32245898, 0.20306328, 0, 0, 0)
 light_color = Color(0.7144246, 0.58231264, 0.99841934, 1)
 shadow_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=54206383]

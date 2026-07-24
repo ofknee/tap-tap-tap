@@ -5,9 +5,8 @@ extends CharacterBody2D
 @onready var JUMP_VELOCITY = Global.jump_vel
 @onready var ray = $RayCast2D
 @onready var shadow = $Shadow
-@onready var score_label = $"../Timer/HBoxContainer/score"
-@onready var hs_label = $"../Timer/HBoxContainer2/highScore"
-
+@onready var score_label = $"../Timer/MarginContainer/MarginContainer2/VBoxContainer/score"
+@onready var hs_label = $"../Timer/MarginContainer/MarginContainer2/VBoxContainer/highScore"
 
 func _physics_process(delta: float) -> void:
 	
