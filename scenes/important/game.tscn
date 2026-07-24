@@ -44,14 +44,9 @@ text = " Score: 0"
 justification_flags = 227
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Timer" unique_id=762870993]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -278.0
-offset_top = -30.0
-offset_right = -121.0
-offset_bottom = 40.0
-grow_horizontal = 0
+offset_top = 22.0
+offset_right = 157.0
+offset_bottom = 92.0
 scale = Vector2(2.360001, 2.360001)
 
 [node name="highScore" type="Label" parent="Timer/HBoxContainer2" unique_id=1883384086]
@@ -85,7 +80,7 @@ shape = SubResource("CircleShape2D_weljr")
 target_position = Vector2(0, 55)
 
 [node name="killzone" parent="." unique_id=1663306613 instance=ExtResource("4_43k1h")]
-position = Vector2(17, 3670)
+position = Vector2(5, 1761)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=59841531]
 shape = SubResource("WorldBoundaryShape2D_l57lt")
