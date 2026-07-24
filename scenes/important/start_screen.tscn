@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b1yyowud05fxi"]
+
+[ext_resource type="FontFile" uid="uid://2da6qudswrlh" path="res://assets/DeathMachineFont_v240330/DeathMachine.ttf" id="1_0gajb"]
+[ext_resource type="Script" uid="uid://cn8egdiw35oyh" path="res://scenes/important/startButton.gd" id="2_vs7yi"]
+[ext_resource type="Script" uid="uid://c3a0cqaei42j5" path="res://scenes/important/quit_button.gd" id="3_rwsj1"]
+
+[node name="Control" type="Control" unique_id=759974377]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(40.000004, 20)
+
+[node name="startButton" type="Button" parent="." unique_id=2611735]
+layout_mode = 0
+offset_left = 13.424999
+offset_top = 4.9499993
+offset_right = 59.425
+offset_bottom = 35.95
+scale = Vector2(0.3004129, 0.4611266)
+theme_override_fonts/font = ExtResource("1_0gajb")
+text = "Start"
+script = ExtResource("2_vs7yi")
+
+[node name="quitButton" type="Button" parent="." unique_id=771547624]
+layout_mode = 0
+offset_left = 13.174999
+offset_top = 21.65
+offset_right = 59.175
+offset_bottom = 52.65
+scale = Vector2(0.3004129, 0.4611266)
+theme_override_fonts/font = ExtResource("1_0gajb")
+text = "Quit"
+script = ExtResource("3_rwsj1")
+
+[connection signal="pressed" from="startButton" to="startButton" method="_on_pressed"]
+[connection signal="pressed" from="quitButton" to="startButton" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="quitButton" to="quitButton" method="_on_pressed"]
