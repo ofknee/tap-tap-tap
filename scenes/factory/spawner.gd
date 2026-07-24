@@ -23,7 +23,8 @@ func spawn_new(type : int):
 				#inst = small_box.instantiate()
 			#inst.rotation.y = deg_to_rad(randf_range(0.0, 360.0))
 		1:
-			inst = yellow_button.instantiate()
+			inst = large_box.instantiate()
+			inst.rotation.y = deg_to_rad(randf_range(0.0, 360.0))
 			add_child(inst)
 			inst.global_position = spawnpoint.global_position
 	

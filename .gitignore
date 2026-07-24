@@ -28,3 +28,4 @@ addons/godot_super-wakatime/plugin.cfg
 addons/godot_super-wakatime/README.md
 addons/godot_super-wakatime/utils.gd
 addons/godot_super-wakatime/utils.gd.uid
+scenes/factory/.DS_Store
