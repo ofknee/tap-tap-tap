@@ -2,6 +2,7 @@ extends TileMapLayer
 #var speed : float = Global.speed
 var spawnpoint = Vector2i(5,-1)
 var tile = {"id" : 1, "atlas_coords" : Vector2i(1,0), }
+var tileless = {"id" : 1, "atlas_coords" : Vector2i(2,0), }
 var last_tile
 var generation = Global.generation
 
@@ -47,6 +48,8 @@ func _physics_process(delta: float) -> void:
 func spawn_tile(type:int) -> void:
 	if type == 0:
 		set_cell(spawnpoint, tile["id"], tile["atlas_coords"])
+	elif type == 1:
+		set_cell(spawnpoint, tileless["id"], tileless["atlas_coords"])
 	spawnpoint += Vector2i(1,0)
 #no red red
 #delete block at end, spawn
