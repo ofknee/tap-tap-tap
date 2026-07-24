@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		shadow.show()
 			
 		var hit = ray.get_collision_point()
-		shadow.global_position = Vector2(global_position.x, hit.y + 6)
+		shadow.global_position = Vector2(global_position.x, hit.y + 4)
 		
 	else:
 		shadow.hide()
