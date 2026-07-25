@@ -11,6 +11,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	position.x -= speed
+	if position.x <= -4:
+		print("die time")
+		queue_free()
 
 
 
@@ -40,4 +43,4 @@ func stick_to_button(body: Node) -> void:
 	if body.has_method("emit_stuck_signal"):
 		body.emit_stuck_signal()
 		
-	print("estoy stuck, ", name, " to ", body.name)
+	#print("estoy stuck, ", name, " to ", body.name)
