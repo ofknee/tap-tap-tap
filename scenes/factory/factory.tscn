@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c0cboynhjfwgy" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/structure-wall.glb" id="2_37mx5"]
 [ext_resource type="PackedScene" uid="uid://6bsq1s0pgmp5" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/piston-square.glb" id="3_3gw73"]
 [ext_resource type="PackedScene" uid="uid://b7axyfw6pubdb" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/machine-connection-hole.glb" id="3_37mx5"]
+[ext_resource type="PackedScene" uid="uid://d3x6ndcjrjict" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/structure-window-wide.glb" id="3_57o46"]
 [ext_resource type="Script" uid="uid://ocvd3bfp0jvr" path="res://scenes/factory/spawner.gd" id="4_7wd4f"]
 [ext_resource type="PackedScene" uid="uid://c0d2h3nlqr03j" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/hopper-high-square.glb" id="4_kr1kb"]
 [ext_resource type="PackedScene" uid="uid://cvytfcd7y3m12" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/arrow-basic.glb" id="5_7wd4f"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bjlid7rqnh751" path="res://scenes/factory/spawnables/cone.tscn" id="14_64w5n"]
 [ext_resource type="Script" uid="uid://c30yctnpqixbh" path="res://scenes/factory/ui.gd" id="14_hg0jv"]
 [ext_resource type="Texture2D" uid="uid://ctusbt3i87hgy" path="res://assets/factory/dark-hand-drawn-panel.png" id="14_i4dya"]
+[ext_resource type="PackedScene" uid="uid://b0p4yq8roqmtq" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/cog-a.glb" id="15_h56bk"]
 [ext_resource type="FontFile" uid="uid://cvblie0n56nwl" path="res://assets/phased-1.2/Phased.otf" id="15_hg0jv"]
 [ext_resource type="PackedScene" uid="uid://bmnenfcbmt78d" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/cog-b.glb" id="16_a47qo"]
 [ext_resource type="PackedScene" uid="uid://ct4wwhsrhilq8" path="res://assets/factory/kenney_factory-kit_3.0/Models/GLB format/cog-c.glb" id="17_6xsq5"]
@@ -110,8 +112,20 @@ transform = Transform3D(0.9588196, 0.11531295, -0.2595531, 0, 0.913869, 0.406009
 
 [node name="Structure" type="Node3D" parent="." unique_id=1110542878]
 
-[node name="Wall" parent="Structure" unique_id=198059091 instance=ExtResource("2_37mx5")]
-transform = Transform3D(-40, -4.210105e-22, -1.2763724e-07, 0, 3.36, -7.1054274e-15, 3.4969112e-06, 1.8402953e-29, -1.4599999, 1.4210855e-14, -0.10000038, -5.16)
+[node name="Walls" type="Node3D" parent="Structure" unique_id=1676959954]
+transform = Transform3D(-1, 0, 1.2763725e-07, 0, 3.36, 0, -8.742278e-08, 0, -1.46, 0, -0.1, -5.1)
+
+[node name="MainWall" parent="Structure/Walls" unique_id=198059091 instance=ExtResource("2_37mx5")]
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WindowWall" parent="Structure/Walls" unique_id=769458643 instance=ExtResource("3_57o46")]
+transform = Transform3D(3.3, 0, 4.790289e-06, 0, 1, 0, -1.5807953e-05, 0, 1, 0, 0, 0)
+
+[node name="WindowWall2" parent="Structure/Walls" unique_id=1894355374 instance=ExtResource("3_57o46")]
+transform = Transform3D(3.3, 0, 4.790289e-06, 0, 0.99999994, 0, -1.5807951e-05, 0, 0.99999994, 15.159018, 0, -9.536743e-07)
+
+[node name="WindowWall3" parent="Structure/Walls" unique_id=1257990959 instance=ExtResource("3_57o46")]
+transform = Transform3D(3.3, 0, 4.790289e-06, 0, 0.9999999, 0, -1.580795e-05, 0, 0.9999999, -12.638086, 0, 7.1525574e-07)
 
 [node name="ConveyerBelt" type="StaticBody3D" parent="Structure" unique_id=1854375526]
 
