@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cn8egdiw35oyh" path="res://scenes/important/startButton.gd" id="2_vs7yi"]
 [ext_resource type="Script" uid="uid://c3a0cqaei42j5" path="res://scenes/important/quit_button.gd" id="3_rwsj1"]
 
-[node name="Control" type="Control" unique_id=759974377]
+[node name="start_screen" type="Control" unique_id=759974377]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
