@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 			
 			SignalBus.spawn_new.emit(generation[-1])
 
+
 func spawn_tile(type:int) -> void:
 	if type == 0:
 		set_cell(spawnpoint, tile["id"], tile["atlas_coords"])

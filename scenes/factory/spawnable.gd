@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	position.x -= speed
+	position.x -= Global.speed/108.5 # magic number to sync with different sizes lol
 	if position.x <= -4:
 		print("die time")
 		queue_free()

@@ -2,13 +2,16 @@ extends CharacterBody2D
 
 
 #@onready var SPEED = Global.player_speed
-@onready var JUMP_VELOCITY = Global.jump_vel
+@onready var x_value = global_position.x
+#@onready var JUMP_VELOCITY = Global.jump_vel
 @onready var ray = $RayCast2D
 @onready var shadow = $Shadow
 @onready var score_label = $"../Timer/MarginContainer/MarginContainer2/VBoxContainer/score"
 @onready var hs_label = $"../Timer/MarginContainer/MarginContainer2/VBoxContainer/highScore"
 
 func _physics_process(delta: float) -> void:
+	global_position.x = x_value
+	
 	
 	hs_label.text = " High Score: " + str(Global.high_score)
 		
@@ -22,13 +25,13 @@ func _physics_process(delta: float) -> void:
 		shadow.hide()
 	# Add the gravity.
 	if not is_on_floor():
-		#if Global.accel_count > 1:
-			#velocity += get_gravity() * delta * 1.1 * (1*Global.accel_count)
-		#else:
-		velocity += get_gravity() * delta * 1.1
-	# Handle jump.
+		if Global.accel_count > 1:
+			velocity += get_gravity() * delta * 1.1 * (Global.accel_count)
+		else:
+			velocity += get_gravity() * delta * 1.1
+
 	if Input.is_anything_pressed() and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = Global.jump_vel
 		SignalBus.tap.emit()
 	
 
@@ -49,13 +52,20 @@ func add_point():
 			hs_label.text = " High Score: " + str(Global.high_score)
 	score_label.text = " Score: " + str(Global.score)
 
+	if Global.score % 20 == 0:
+		Global.accel_count += 1
+		Global.speed = 1.05 * (Global.accel_count) 
+		Global.player_speed *= 1.1
+		Global.jump_vel *= 1.1
+
+
 func _on_timer_timeout() -> void:
 	add_point()
 	
 func _input(event : InputEvent) -> void:
 	if Input.is_action_just_pressed("SWITCH"):
 		get_tree().change_scene_to_file("res://scenes/factory/factory.tscn")
-	#if Global.high_score%100 == 0:
+	#if Global.high_score%20 == 0:
 		#Global.speed = Global.speed*1.1
 		#Global.player_speed = Global.player_speed*1.1
 		#Global.jump_vel = Global.jump_vel*1.1

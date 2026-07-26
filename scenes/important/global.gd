@@ -9,5 +9,7 @@ var speed : float = 1.1
 var score = 0
 var high_score = 0
 var jump_vel = -380
+var player_speed = 180
+var accel_count = 0
 
 var floor_check : bool = false
