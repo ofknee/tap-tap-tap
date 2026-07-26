@@ -39,6 +39,9 @@ func stick_to_button(body: Node) -> void:
 		body.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
 		body.linear_velocity = Vector3.ZERO
 		body.angular_velocity = Vector3.ZERO
+		body.collision_layer = 0
+		body.collision_mask = 0
+
 
 	if body.has_method("emit_stuck_signal"):
 		body.emit_stuck_signal()
