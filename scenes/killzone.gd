@@ -4,4 +4,4 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		Global.score = 0
 		print("2d kill")
-		get_tree().reload_current_scene.call_deferred()
+		SignalBus.restart_game.emit()

@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cmsi35hi4e0ks"]
 
+[ext_resource type="Script" uid="uid://7y4xa23tmlnc" path="res://scenes/root.gd" id="1_lrqlo"]
 [ext_resource type="PackedScene" uid="uid://wkur7bfdvfoo" path="res://scenes/important/game.tscn" id="1_pyidc"]
 [ext_resource type="PackedScene" uid="uid://26cmtm6k7xp0" path="res://scenes/factory/factory.tscn" id="2_vvh5c"]
 
 [node name="root" type="Node" unique_id=169769415]
+script = ExtResource("1_lrqlo")
 
 [node name="Control" type="Control" parent="." unique_id=1067416065]
 layout_mode = 3
@@ -28,7 +30,9 @@ size_flags_horizontal = 3
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Control/HBoxContainer/SubViewportContainer2" unique_id=446442165]
+handle_input_locally = false
 size = Vector2i(799, 791)
+render_target_update_mode = 4
 
 [node name="game" parent="Control/HBoxContainer/SubViewportContainer2/SubViewport" unique_id=1528345599 instance=ExtResource("1_pyidc")]
 
@@ -38,6 +42,8 @@ size_flags_horizontal = 3
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Control/HBoxContainer/SubViewportContainer" unique_id=403336660]
+handle_input_locally = false
 size = Vector2i(800, 791)
+render_target_update_mode = 4
 
 [node name="Factory" parent="Control/HBoxContainer/SubViewportContainer/SubViewport" unique_id=218373315 instance=ExtResource("2_vvh5c")]
