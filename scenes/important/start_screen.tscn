@@ -24,6 +24,7 @@ offset_top = 29.05
 offset_right = 70.9
 offset_bottom = 41.05
 scale = Vector2(0.37, 0.639)
+theme_override_colors/default_color = Color(0.51408, 0.48509997, 0.63, 1)
 theme_override_font_sizes/normal_font_size = 2
 text = "tap any key / mouse to... 
 1 - jump over gaps
