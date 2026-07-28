@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="tap-tap-tap"
-run/main_scene="uid://cmsi35hi4e0ks"
+run/main_scene="uid://b1yyowud05fxi"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
