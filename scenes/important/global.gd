@@ -5,7 +5,7 @@ var generation: Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,]: ##starting m
 		generation = new_generation
 		generation_updated.emit(generation)
 
-var speed : float = 1.1
+var speed : float = 1
 var score = 0
 var high_score = 0
 var jump_vel = -380
