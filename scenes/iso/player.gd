@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 #@onready var SPEED = Global.player_speed
 @onready var JUMP_VELOCITY = Global.jump_vel
+@onready var jump_sound = $"../../../../../../jump_Sound"
 @onready var ray = $RayCast2D
 @onready var shadow = $Shadow
 @onready var score_label = $"../Timer/MarginContainer/MarginContainer2/VBoxContainer/score"
@@ -30,6 +31,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_anything_pressed() and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		SignalBus.tap.emit()
+		jump_sound.play()
+		
 	
 
 	# Get the input direction and handle the movement/deceleration.

@@ -15,10 +15,15 @@ run/main_scene="uid://cmsi35hi4e0ks"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://t1vojx1ecbcj"
+
 [autoload]
 
 Global="*uid://b78dqwmdm3yhc"
 SignalBus="*uid://bis18itojhmb2"
+BgMusic="*uid://d4j4uenoxratd"
 
 [display]
 
