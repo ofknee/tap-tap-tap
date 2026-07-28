@@ -5,34 +5,63 @@
 [ext_resource type="Script" uid="uid://c3a0cqaei42j5" path="res://scenes/important/quit_button.gd" id="3_rwsj1"]
 
 [node name="start_screen" type="Control" unique_id=759974377]
+custom_minimum_size = Vector2(1600, 800)
+custom_maximum_size = Vector2(1600, 800)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(40.000004, 20)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="startButton" type="Button" parent="." unique_id=2611735]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1213905513]
 layout_mode = 0
-offset_left = 13.424999
-offset_top = 4.9499993
-offset_right = 59.425
-offset_bottom = 35.95
-scale = Vector2(0.3004129, 0.4611266)
+offset_left = 8.900001
+offset_top = 29.05
+offset_right = 70.9
+offset_bottom = 41.05
+scale = Vector2(0.37, 0.639)
+theme_override_font_sizes/normal_font_size = 2
+text = "tap any key / mouse to... 
+1 - jump over gaps
+2 - drop bows onto boxes
+... at the right time"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1559315921]
+layout_mode = 1
+offset_left = 11.749999
+offset_top = 4.8
+offset_right = 73.75001
+offset_bottom = 50.8
+scale = Vector2(0.48, 0.48)
+alignment = 1
+
+[node name="startButton" type="Button" parent="VBoxContainer" unique_id=2611735]
+self_modulate = Color(0.73, 0.75249994, 1, 1)
+custom_maximum_size = Vector2(34.25, -1)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.45, 0.45, 0.45, 1)
 theme_override_fonts/font = ExtResource("1_0gajb")
+theme_override_font_sizes/font_size = 10
 text = "Start"
 script = ExtResource("2_vs7yi")
 
-[node name="quitButton" type="Button" parent="." unique_id=771547624]
-layout_mode = 0
-offset_left = 13.174999
-offset_top = 21.65
-offset_right = 59.175
-offset_bottom = 52.65
-scale = Vector2(0.3004129, 0.4611266)
+[node name="quitButton" type="Button" parent="VBoxContainer" unique_id=771547624]
+self_modulate = Color(0.73, 0.75249994, 1, 1)
+custom_maximum_size = Vector2(34.25, -1)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.45, 0.45, 0.45, 1)
 theme_override_fonts/font = ExtResource("1_0gajb")
+theme_override_font_sizes/font_size = 10
 text = "Quit"
 script = ExtResource("3_rwsj1")
 
-[connection signal="pressed" from="startButton" to="startButton" method="_on_pressed"]
-[connection signal="pressed" from="quitButton" to="startButton" method="_on_quit_button_pressed"]
-[connection signal="pressed" from="quitButton" to="quitButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/startButton" to="VBoxContainer/startButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/quitButton" to="VBoxContainer/startButton" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/quitButton" to="VBoxContainer/quitButton" method="_on_pressed"]
