@@ -19,10 +19,10 @@ size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1213905513]
 layout_mode = 0
-offset_left = 8.900001
-offset_top = 29.05
+offset_left = 8.899999
+offset_top = 27.849998
 offset_right = 70.9
-offset_bottom = 41.05
+offset_bottom = 39.85
 scale = Vector2(0.37, 0.639)
 theme_override_colors/default_color = Color(0.51408, 0.48509997, 0.63, 1)
 theme_override_font_sizes/normal_font_size = 2
@@ -36,10 +36,10 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1559315921]
 layout_mode = 1
-offset_left = 11.749999
-offset_top = 4.8
+offset_left = 11.749997
+offset_top = 3.6000001
 offset_right = 73.75001
-offset_bottom = 50.8
+offset_bottom = 49.6
 scale = Vector2(0.48, 0.48)
 alignment = 1
 
