@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://wkur7bfdvfoo" path="res://scenes/important/game.tscn" id="1_pyidc"]
 [ext_resource type="PackedScene" uid="uid://26cmtm6k7xp0" path="res://scenes/factory/factory.tscn" id="2_vvh5c"]
 [ext_resource type="AudioStream" uid="uid://mhabgtw52orv" path="res://assets/jump.mp3" id="4_sqa0i"]
+[ext_resource type="AudioStream" uid="uid://dst1blp0p4sh8" path="res://assets/die_sound.mp3" id="5_jh1ax"]
 
 [node name="root" type="Node" unique_id=169769415]
 script = ExtResource("1_lrqlo")
@@ -51,4 +52,8 @@ render_target_update_mode = 4
 
 [node name="jump_Sound" type="AudioStreamPlayer" parent="." unique_id=930062812]
 stream = ExtResource("4_sqa0i")
+bus = &"SFX"
+
+[node name="kill_sound" type="AudioStreamPlayer" parent="." unique_id=746245579]
+stream = ExtResource("5_jh1ax")
 bus = &"SFX"
