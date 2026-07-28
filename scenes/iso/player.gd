@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_anything_pressed() and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		SignalBus.tap.emit()
-		jump_sound.play()
+		jump_sound.play(0.1)
 		
 	
 
