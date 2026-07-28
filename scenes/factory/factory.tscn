@@ -161,7 +161,7 @@ small_box = ExtResource("10_ggcq3")
 yellow_button = ExtResource("8_vv6eg")
 
 [node name="Spawnpoint" type="Marker3D" parent="Structure/ConveyerSpawner" unique_id=1631144658]
-transform = Transform3D(0.9999975, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 2.1127958, 0.13999994, 0.0059999824)
+transform = Transform3D(0.9999974, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 2.3642526, 0.13999994, 0.0059999824)
 
 [node name="Floor" type="StaticBody3D" parent="Structure" unique_id=1081535746]
 
@@ -227,7 +227,7 @@ transform = Transform3D(-0.980651, 0, -0.19576417, 0, 0.9999999, 0, 0.19576417, 
 transform = Transform3D(-3.2838836, 0, -0.60077626, 0, 0.7135243, 0, 0.65555096, 0, -3.0094967, -5.147383, -5.5879354e-09, 2.6353345)
 
 [node name="cog-e7" parent="Structure/FloorDecor/Cogs" unique_id=1538917610 instance=ExtResource("19_34aiy")]
-transform = Transform3D(-1.8376405, 0, -0.21764588, 0, 0.7135243, 0, 0.36684218, 0, -1.0902637, -4.2139893, -5.5879354e-09, 3.859508)
+transform = Transform3D(-1.833685, 0.06371917, -0.20645611, 0.1265474, 0.7066901, 0.13389413, 0.36480236, 0.075139545, -1.0842015, -4.2139893, 0.16060716, 3.859508)
 
 [node name="cog-a4" parent="Structure/FloorDecor/Cogs" unique_id=1787474944 instance=ExtResource("15_h56bk")]
 transform = Transform3D(-0.8486295, 0, -0.5289876, 0, 0.9999999, 0, 0.52898765, 0, -0.8486295, -2.0822835, -7.450581e-09, -1.5989938)

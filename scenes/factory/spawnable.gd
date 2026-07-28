@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-var speed = Global.speed/105
+var speed = Global.speed/100
 #@onready var top : CollisionShape3D = $Top
 
 # Called when the node enters the scene tree for the first time.
@@ -11,8 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	position.x -= speed
-	if position.x <= -4:
-		print("die time")
+	if position.x <= -4: # offscreen left
 		queue_free()
 
 
