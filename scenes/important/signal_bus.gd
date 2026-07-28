@@ -2,5 +2,4 @@ extends Node
 
 signal spawn_new(tpye : int)
 signal tap()
-
-signal game_over()
+signal restart_game()

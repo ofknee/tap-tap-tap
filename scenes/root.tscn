@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmsi35hi4e0ks"]
 
-[ext_resource type="Script" uid="uid://sn606dglvtjn" path="res://scenes/root.gd" id="1_lrqlo"]
+[ext_resource type="Script" uid="uid://7y4xa23tmlnc" path="res://scenes/root.gd" id="1_lrqlo"]
 [ext_resource type="PackedScene" uid="uid://wkur7bfdvfoo" path="res://scenes/important/game.tscn" id="1_pyidc"]
 [ext_resource type="PackedScene" uid="uid://26cmtm6k7xp0" path="res://scenes/factory/factory.tscn" id="2_vvh5c"]
 
@@ -35,7 +35,6 @@ size = Vector2i(799, 791)
 render_target_update_mode = 4
 
 [node name="game" parent="Control/HBoxContainer/SubViewportContainer2/SubViewport" unique_id=1528345599 instance=ExtResource("1_pyidc")]
-script = null
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Control/HBoxContainer" unique_id=690713045]
 layout_mode = 2
@@ -48,5 +47,3 @@ size = Vector2i(800, 791)
 render_target_update_mode = 4
 
 [node name="Factory" parent="Control/HBoxContainer/SubViewportContainer/SubViewport" unique_id=218373315 instance=ExtResource("2_vvh5c")]
-
-[connection signal="ready" from="." to="." method="_on_ready"]

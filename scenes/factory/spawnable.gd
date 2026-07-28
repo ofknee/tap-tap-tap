@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-var speed = Global.speed/110
+var speed = Global.speed/100
 #@onready var top : CollisionShape3D = $Top
 
 # Called when the node enters the scene tree for the first time.
@@ -11,6 +11,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	position.x -= speed
+	if position.x <= -4: # offscreen left
+		queue_free()
 
 
 
@@ -36,8 +38,11 @@ func stick_to_button(body: Node) -> void:
 		body.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
 		body.linear_velocity = Vector3.ZERO
 		body.angular_velocity = Vector3.ZERO
+		body.collision_layer = 0
+		body.collision_mask = 0
+
 
 	if body.has_method("emit_stuck_signal"):
 		body.emit_stuck_signal()
 		
-	print("estoy stuck, ", name, " to ", body.name)
+	#print("estoy stuck, ", name, " to ", body.name)
