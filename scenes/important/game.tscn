@@ -42,7 +42,7 @@ centered = false
 
 [node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1113890360]
 repeat_size = Vector2(1600, 1600)
-autoscroll = Vector2(-40, 10)
+autoscroll = Vector2(-40, 20)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=5363043]
 texture_filter = 1
